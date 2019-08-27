@@ -12,7 +12,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        // set up navigation bar
+        let sort = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(onSort))
+        navigationItem.rightBarButtonItems = [sort]
+    }
+    
+    @objc func onSort(){
+        print("sort")
     }
 
 
