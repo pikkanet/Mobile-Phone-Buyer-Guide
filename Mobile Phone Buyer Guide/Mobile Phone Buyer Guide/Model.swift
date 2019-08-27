@@ -26,3 +26,17 @@ struct MobileResponseElement: Codable {
 }
 
 typealias MobileResponse = [MobileResponseElement]
+
+// MARK: - MobileImageResponseElement
+struct MobileImageResponseElement: Codable {
+    let mobileID: Int
+    let url: String
+    let id: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case mobileID = "mobile_id"
+        case url, id
+    }
+}
+
+typealias MobileImageResponse = [MobileImageResponseElement]
