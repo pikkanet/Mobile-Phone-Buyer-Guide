@@ -34,10 +34,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func feedData(){
         let url =  "https://scb-test-mobile.herokuapp.com/api/mobiles/"
-        self.mFeedData.getPositionData(url: url) { (result) in
+        self.mFeedData.getMobiles(url: url) { (result) in
             self.mDataArray = result
             self.mTableView.reloadData()
         }
+        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,7 +61,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let item = self.mDataArray[indexPath.row]
         self.selectedIndex = indexPath.row
         print(indexPath.row)
-        self.performSegue(withIdentifier: "showDetail", sender: self)
+        let url =  "https://scb-test-mobile.herokuapp.com/api/mobiles/\(item.id)/images/"
+        self.mFeedData.getMobileImages(url: url) { (result) in
+            print(result.count)
+        }
+//        self.performSegue(withIdentifier: "showDetail", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
