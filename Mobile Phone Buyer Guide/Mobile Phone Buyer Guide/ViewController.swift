@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var mDataArray:MobileResponse = []
     var mFeedData:FeedData = FeedData()
     var selectedIndex:Int?
+    var id:Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,12 +61,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.deselectRow(at: indexPath, animated: true)
         let item = self.mDataArray[indexPath.row]
         self.selectedIndex = indexPath.row
+        self.id = item.id
         print(indexPath.row)
-        let url =  "https://scb-test-mobile.herokuapp.com/api/mobiles/\(item.id)/images/"
-        self.mFeedData.getMobileImages(url: url) { (result) in
-            print(result.count)
-        }
-//        self.performSegue(withIdentifier: "showDetail", sender: self)
+//        let url =  "https://scb-test-mobile.herokuapp.com/api/mobiles/\(item.id)/images/"
+//        self.mFeedData.getMobileImages(url: url) { (result) in
+//            print(result.count)
+//        }
+        self.performSegue(withIdentifier: "showDetail", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -73,7 +75,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //        targetVC.message = "Foam"
         print(self.mDataArray[self.selectedIndex!].name)
         targetVC.message = self.mDataArray[self.selectedIndex!].name
-        
+        targetVC.id = self.id
     }
     
 }
