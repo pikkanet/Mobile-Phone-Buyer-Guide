@@ -1,6 +1,0 @@
-framework module Pods_Mobile_Phone_Buyer_Guide {
-  umbrella header "Pods-Mobile Phone Buyer Guide-umbrella.h"
-
-  export *
-  module * { export * }
-}
