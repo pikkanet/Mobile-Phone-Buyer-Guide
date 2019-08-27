@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var mDataArray:MobileResponse = []
     var mFeedData:FeedData = FeedData()
+    var selectedIndex:Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,10 +52,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.mProductRate.text = "Rating: \(item.rating)"
         cell.mProductPrice.text = "Price: $\(item.price)"
         cell.mProductImage.af_setImage(withURL: URL(string: item.thumbImageURL)!)
-        print(item.isFavourite)
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let item = self.mDataArray[indexPath.row]
+        self.selectedIndex = indexPath.row
+        print(indexPath.row)
+        self.performSegue(withIdentifier: "showDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let targetVC = segue.destination as! ProductDetailViewController
+//        targetVC.message = "Foam"
+        print(self.mDataArray[self.selectedIndex!].name)
+        targetVC.message = self.mDataArray[self.selectedIndex!].name
+        
+    }
     
 }
 
