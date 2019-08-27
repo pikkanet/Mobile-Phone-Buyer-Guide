@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,9 +12,12 @@
 		A0908C0A23150DE800E92B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0908C0823150DE800E92B54 /* Main.storyboard */; };
 		A0908C0C23150DE900E92B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0908C0B23150DE900E92B54 /* Assets.xcassets */; };
 		A0908C0F23150DE900E92B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0908C0D23150DE900E92B54 /* LaunchScreen.storyboard */; };
+		A0908C1723150E4300E92B54 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A0908C1623150E4300E92B54 /* Podfile */; };
+		A90B79F848F4A2855ACCEC0B /* Pods_Mobile_Phone_Buyer_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192488E5DE7D9A912B44111F /* Pods_Mobile_Phone_Buyer_Guide.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		192488E5DE7D9A912B44111F /* Pods_Mobile_Phone_Buyer_Guide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mobile_Phone_Buyer_Guide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0908C0123150DE800E92B54 /* Mobile Phone Buyer Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobile Phone Buyer Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0908C0423150DE800E92B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0908C0623150DE800E92B54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,9 @@
 		A0908C0B23150DE900E92B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0908C0E23150DE900E92B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0908C1023150DE900E92B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0908C1623150E4300E92B54 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C97615BB16DB87584AF866DA /* Pods-Mobile Phone Buyer Guide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Phone Buyer Guide.release.xcconfig"; path = "Target Support Files/Pods-Mobile Phone Buyer Guide/Pods-Mobile Phone Buyer Guide.release.xcconfig"; sourceTree = "<group>"; };
+		EE1330795299B3BE3CF3F744 /* Pods-Mobile Phone Buyer Guide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Phone Buyer Guide.debug.xcconfig"; path = "Target Support Files/Pods-Mobile Phone Buyer Guide/Pods-Mobile Phone Buyer Guide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A90B79F848F4A2855ACCEC0B /* Pods_Mobile_Phone_Buyer_Guide.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31812F47822B532E54AFF414 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				192488E5DE7D9A912B44111F /* Pods_Mobile_Phone_Buyer_Guide.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A0908BF823150DE800E92B54 = {
 			isa = PBXGroup;
 			children = (
+				A0908C1623150E4300E92B54 /* Podfile */,
 				A0908C0323150DE800E92B54 /* Mobile Phone Buyer Guide */,
 				A0908C0223150DE800E92B54 /* Products */,
+				BD0AB860FF4313138004C47D /* Pods */,
+				31812F47822B532E54AFF414 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +82,15 @@
 			path = "Mobile Phone Buyer Guide";
 			sourceTree = "<group>";
 		};
+		BD0AB860FF4313138004C47D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EE1330795299B3BE3CF3F744 /* Pods-Mobile Phone Buyer Guide.debug.xcconfig */,
+				C97615BB16DB87584AF866DA /* Pods-Mobile Phone Buyer Guide.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0908C1323150DE900E92B54 /* Build configuration list for PBXNativeTarget "Mobile Phone Buyer Guide" */;
 			buildPhases = (
+				B1CD8AF6EBBBA75E0EB4A145 /* [CP] Check Pods Manifest.lock */,
 				A0908BFD23150DE800E92B54 /* Sources */,
 				A0908BFE23150DE800E92B54 /* Frameworks */,
 				A0908BFF23150DE800E92B54 /* Resources */,
+				F4E18B898522FEF76D1163F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,11 +153,54 @@
 			files = (
 				A0908C0F23150DE900E92B54 /* LaunchScreen.storyboard in Resources */,
 				A0908C0C23150DE900E92B54 /* Assets.xcassets in Resources */,
+				A0908C1723150E4300E92B54 /* Podfile in Resources */,
 				A0908C0A23150DE800E92B54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B1CD8AF6EBBBA75E0EB4A145 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Mobile Phone Buyer Guide-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4E18B898522FEF76D1163F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobile Phone Buyer Guide/Pods-Mobile Phone Buyer Guide-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Mobile Phone Buyer Guide/Pods-Mobile Phone Buyer Guide-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Mobile Phone Buyer Guide/Pods-Mobile Phone Buyer Guide-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A0908BFD23150DE800E92B54 /* Sources */ = {
@@ -280,6 +352,7 @@
 		};
 		A0908C1423150DE900E92B54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE1330795299B3BE3CF3F744 /* Pods-Mobile Phone Buyer Guide.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +371,7 @@
 		};
 		A0908C1523150DE900E92B54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C97615BB16DB87584AF866DA /* Pods-Mobile Phone Buyer Guide.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
