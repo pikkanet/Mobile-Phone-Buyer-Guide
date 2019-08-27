@@ -13,6 +13,7 @@
 		A0908C2C23151AAE00E92B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0908C2A23151AAE00E92B54 /* Main.storyboard */; };
 		A0908C2E23151AAF00E92B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0908C2D23151AAF00E92B54 /* Assets.xcassets */; };
 		A0908C3123151AAF00E92B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0908C2F23151AAF00E92B54 /* LaunchScreen.storyboard */; };
+		A0908C3923151D1A00E92B54 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0908C3823151D1A00E92B54 /* CustomTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A0908C2D23151AAF00E92B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0908C3023151AAF00E92B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0908C3223151AAF00E92B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0908C3823151D1A00E92B54 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				A0908C2423151AAE00E92B54 /* AppDelegate.swift */,
+				A0908C3823151D1A00E92B54 /* CustomTabBarController.swift */,
 				A0908C2623151AAE00E92B54 /* FirstViewController.swift */,
 				A0908C2823151AAE00E92B54 /* SecondViewController.swift */,
 				A0908C2A23151AAE00E92B54 /* Main.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				A0908C2923151AAE00E92B54 /* SecondViewController.swift in Sources */,
 				A0908C2523151AAE00E92B54 /* AppDelegate.swift in Sources */,
+				A0908C3923151D1A00E92B54 /* CustomTabBarController.swift in Sources */,
 				A0908C2723151AAE00E92B54 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
