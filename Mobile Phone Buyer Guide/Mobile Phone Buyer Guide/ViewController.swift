@@ -6,12 +6,18 @@
 //  Copyright © 2562 SCB. All rights reserved.
 //
 
+import Alamofire
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var mDataArray:MobileResponse = []
+    var mFeedData:FeedData = FeedData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.feedData()
         
         // set up navigation bar
         let sort = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(onSort))
@@ -20,6 +26,16 @@ class ViewController: UIViewController {
     
     @objc func onSort(){
         print("sort")
+    }
+    
+    func feedData(){
+        let url =  "https://scb-test-mobile.herokuapp.com/api/mobiles/"
+        self.mFeedData.getPositionData(url: url) { (result) in
+//            print(result)
+            self.mDataArray = result
+            print(self.mDataArray.count)
+            
+        }
     }
 
 

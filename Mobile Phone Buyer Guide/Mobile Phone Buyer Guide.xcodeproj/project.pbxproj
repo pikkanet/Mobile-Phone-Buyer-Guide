@@ -13,6 +13,8 @@
 		A0908C0C23150DE900E92B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0908C0B23150DE900E92B54 /* Assets.xcassets */; };
 		A0908C0F23150DE900E92B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0908C0D23150DE900E92B54 /* LaunchScreen.storyboard */; };
 		A0908C1723150E4300E92B54 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A0908C1623150E4300E92B54 /* Podfile */; };
+		A0908C3B231525CF00E92B54 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0908C3A231525CF00E92B54 /* Model.swift */; };
+		A0908C3D231526C700E92B54 /* FeedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0908C3C231526C700E92B54 /* FeedData.swift */; };
 		A90B79F848F4A2855ACCEC0B /* Pods_Mobile_Phone_Buyer_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192488E5DE7D9A912B44111F /* Pods_Mobile_Phone_Buyer_Guide.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		A0908C0E23150DE900E92B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0908C1023150DE900E92B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0908C1623150E4300E92B54 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0908C3A231525CF00E92B54 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		A0908C3C231526C700E92B54 /* FeedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedData.swift; sourceTree = "<group>"; };
 		C97615BB16DB87584AF866DA /* Pods-Mobile Phone Buyer Guide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Phone Buyer Guide.release.xcconfig"; path = "Target Support Files/Pods-Mobile Phone Buyer Guide/Pods-Mobile Phone Buyer Guide.release.xcconfig"; sourceTree = "<group>"; };
 		EE1330795299B3BE3CF3F744 /* Pods-Mobile Phone Buyer Guide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Phone Buyer Guide.debug.xcconfig"; path = "Target Support Files/Pods-Mobile Phone Buyer Guide/Pods-Mobile Phone Buyer Guide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +79,8 @@
 				A0908C0423150DE800E92B54 /* AppDelegate.swift */,
 				A0908C0623150DE800E92B54 /* ViewController.swift */,
 				A0908C0823150DE800E92B54 /* Main.storyboard */,
+				A0908C3A231525CF00E92B54 /* Model.swift */,
+				A0908C3C231526C700E92B54 /* FeedData.swift */,
 				A0908C0B23150DE900E92B54 /* Assets.xcassets */,
 				A0908C0D23150DE900E92B54 /* LaunchScreen.storyboard */,
 				A0908C1023150DE900E92B54 /* Info.plist */,
@@ -207,8 +213,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0908C3B231525CF00E92B54 /* Model.swift in Sources */,
 				A0908C0723150DE800E92B54 /* ViewController.swift in Sources */,
 				A0908C0523150DE800E92B54 /* AppDelegate.swift in Sources */,
+				A0908C3D231526C700E92B54 /* FeedData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
