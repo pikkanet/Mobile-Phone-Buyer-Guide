@@ -16,7 +16,7 @@ struct MobileResponseElement: Codable {
     let thumbImageURL: String
     let price: Double
     let brand, name: String
-    let isFavourite: Bool?
+    let isFavourite: Bool? = false
     let mobileResponseDescription: String
     
     enum CodingKeys: String, CodingKey {

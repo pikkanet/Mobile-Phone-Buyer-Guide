@@ -7,9 +7,12 @@
 //
 
 import Alamofire
+import AlamofireImage
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var mTableView:UITableView!
     
     var mDataArray:MobileResponse = []
     var mFeedData:FeedData = FeedData()
@@ -31,13 +34,27 @@ class ViewController: UIViewController {
     func feedData(){
         let url =  "https://scb-test-mobile.herokuapp.com/api/mobiles/"
         self.mFeedData.getPositionData(url: url) { (result) in
-//            print(result)
             self.mDataArray = result
-            print(self.mDataArray.count)
-            
+            self.mTableView.reloadData()
         }
     }
 
-
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.mDataArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "mobilecell", for: indexPath) as! CustomTableViewCell
+        let item = self.mDataArray[indexPath.row]
+        cell.mProductName.text = item.name
+        cell.mProductDescription.text = item.mobileResponseDescription
+        cell.mProductRate.text = "Rating: \(item.rating)"
+        cell.mProductPrice.text = "Price: $\(item.price)"
+        cell.mProductImage.af_setImage(withURL: URL(string: item.thumbImageURL)!)
+        print(item.isFavourite)
+        return cell
+    }
+    
+    
 }
 
