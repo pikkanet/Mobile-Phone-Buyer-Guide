@@ -39,7 +39,6 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
             self.mDataArray = result
             for i in 0...self.mDataArray.count-1 {
                 self.mDataArray[i].isFavourite = false
-                print(i)
             }
             self.mTableView.reloadData()
         }
@@ -47,7 +46,6 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print(self.mDataArray.count)
         return self.mDataArray.count
     }
     
@@ -79,23 +77,21 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
         self.selectedIndex = indexPath.row
         self.id = item.id
         print(indexPath.row)
-//        let url =  "https://scb-test-mobile.herokuapp.com/api/mobiles/\(item.id)/images/"
-//        self.mFeedData.getMobileImages(url: url) { (result) in
-//            print(result.count)
-//        }
         self.performSegue(withIdentifier: "showDetail", sender: self)
     }
     
     func didTapButtonInCell(_ cell: CustomTableViewCell) {
         print(cell.mFavoriteButton.tag)
-        self.mDataArray[cell.mFavoriteButton.tag].isFavourite = true
+        if self.mDataArray[cell.mFavoriteButton.tag].isFavourite!{
+            self.mDataArray[cell.mFavoriteButton.tag].isFavourite = false
+        } else {
+            self.mDataArray[cell.mFavoriteButton.tag].isFavourite = true
+        }
         self.mTableView.reloadData()
-//        print("tap")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let targetVC = segue.destination as! ProductDetailViewController
-//        targetVC.message = "Foam"
         print(self.mDataArray[self.selectedIndex!].name)
         targetVC.productName = self.mDataArray[self.selectedIndex!].name
         targetVC.id = self.id
