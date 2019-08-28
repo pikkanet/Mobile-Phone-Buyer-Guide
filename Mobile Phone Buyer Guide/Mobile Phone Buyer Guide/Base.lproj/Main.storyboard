@@ -107,7 +107,7 @@
                     <navigationItem key="navigationItem" id="EKY-Rc-Ki8"/>
                     <connections>
                         <outlet property="mTableView" destination="EAy-Uz-nda" id="EQr-15-Hum"/>
-                        <segue destination="AwR-bC-xPy" kind="show" identifier="showDetail" id="6Zd-4t-FLg"/>
+                        <segue destination="AwR-bC-xPy" kind="show" id="6Zd-4t-FLg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
