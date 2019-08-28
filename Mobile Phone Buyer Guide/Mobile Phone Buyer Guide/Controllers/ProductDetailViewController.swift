@@ -60,7 +60,13 @@ extension ProductDetailViewController:UICollectionViewDelegateFlowLayout, UIColl
             withReuseIdentifier: "collectionViewCell",
             for: indexPath) as! ImageCollectionViewCell
         let item = self.mDataArray[indexPath.row]
-        cell.mImage.kf.setImage(with: URL(string: item.url))
+        let image = UIImage(named: "image_not_found")
+        if (item.url.contains("http://") || (item.url.contains("https://"))){
+            cell.mImage.kf.setImage(with: URL(string: item.url), placeholder: image)
+        } else {
+            cell.mImage.kf.setImage(with: URL(string: "http://" + item.url), placeholder: image)
+        }
+//        cell.mImage.kf.setImage(with: URL(string: item.url), placeholder: image)
         return cell
     }
     
