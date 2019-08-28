@@ -20,6 +20,7 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     var mFeedData:FeedData = FeedData()
     var selectedIndex:Int?
     var id:Int?
+    var isFavorite:Bool? = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,24 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @objc func onSort(){
-        print("sort")
+        let alert = UIAlertController(title: "Sort", message: "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: {(_: UIAlertAction!) in
+            print("Price low to high")
+        }))
+        alert.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: {(_: UIAlertAction!) in
+            print( "Price high to low")
+        }))
+        alert.addAction(UIAlertAction(title: "Rating", style: .default, handler: {(_: UIAlertAction!) in
+            print("Rating")
+        }))
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+       
+        self.present(alert, animated: true)
+    }
+    
+    func sortPriceLow(){
+        
     }
     
     func feedData(){
@@ -103,18 +121,19 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func onClickAll(_ sender: Any) {
-        print("All")
+        self.isFavorite = false
+        self.mDataArray = self.tmp
+        self.mTableView.reloadData()
     }
     
     @IBAction func onClickFavorite(_ sender: Any) {
+        self.isFavorite = true
         self.mFavoriteArray = self.mDataArray.filter{(data) -> Bool in
             return data.isFavourite == true
         }
-        print(self.mFavoriteArray)
         self.tmp = self.mDataArray
         self.mDataArray = self.mFavoriteArray
         self.mTableView.reloadData()
-        print("Favorite")
     }
     
 }
