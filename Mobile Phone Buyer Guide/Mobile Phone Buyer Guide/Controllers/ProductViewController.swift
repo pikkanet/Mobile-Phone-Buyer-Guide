@@ -36,12 +36,18 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
         let alert = UIAlertController(title: "Sort", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: {(_: UIAlertAction!) in
             print("Price low to high")
+            self.mDataArray.sort(by: { $0.price < $1.price })
+            self.mTableView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: {(_: UIAlertAction!) in
             print( "Price high to low")
+            self.mDataArray.sort(by: { $0.price > $1.price })
+            self.mTableView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: "Rating", style: .default, handler: {(_: UIAlertAction!) in
             print("Rating")
+            self.mDataArray.sort(by: { $0.rating > $1.rating })
+            self.mTableView.reloadData()
         }))
 
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
