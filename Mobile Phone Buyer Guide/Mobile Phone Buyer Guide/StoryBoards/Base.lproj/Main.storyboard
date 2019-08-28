@@ -83,10 +83,14 @@
                                                     <rect key="frame" x="379" y="9" width="19" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="unfav"/>
+                                                    <connections>
+                                                        <action selector="didTapButtonWithSender:" destination="Gno-Aj-As4" eventType="touchUpInside" id="TxW-sW-74g"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="mFavoriteButton" destination="REe-dV-Q14" id="KtG-az-zaZ"/>
                                             <outlet property="mProductDescription" destination="YPf-m5-XRB" id="ZWS-hL-8r9"/>
                                             <outlet property="mProductImage" destination="VkX-ih-Mbe" id="HKj-Hy-gGa"/>
                                             <outlet property="mProductName" destination="cSI-ws-1Fw" id="8EU-8W-8f5"/>

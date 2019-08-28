@@ -15,6 +15,14 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var mProductPrice:UILabel!
     @IBOutlet weak var mProductRate:UILabel!
     @IBOutlet weak var mProductImage:UIImageView!
+    @IBOutlet weak var mFavoriteButton:UIButton!
+    
+    weak var delegate: MyCellDelegate?
+    
+    @IBAction func didTapButton(sender: UIButton) {
+//        print(sender.tag)
+        delegate?.didTapButtonInCell(self)
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,4 +35,5 @@ class CustomTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
 }

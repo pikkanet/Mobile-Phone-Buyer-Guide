@@ -18,6 +18,7 @@
 		A0908C3F23152BA000E92B54 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0908C3E23152BA000E92B54 /* CustomTableViewCell.swift */; };
 		A0908C4123153DE300E92B54 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0908C4023153DE300E92B54 /* ProductDetailViewController.swift */; };
 		A0908C6923162D1A00E92B54 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0908C6823162D1A00E92B54 /* ImageCollectionViewCell.swift */; };
+		A0908C702316603900E92B54 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0908C6F2316603900E92B54 /* extension.swift */; };
 		A90B79F848F4A2855ACCEC0B /* Pods_Mobile_Phone_Buyer_Guide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192488E5DE7D9A912B44111F /* Pods_Mobile_Phone_Buyer_Guide.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		A0908C3E23152BA000E92B54 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		A0908C4023153DE300E92B54 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 		A0908C6823162D1A00E92B54 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		A0908C6F2316603900E92B54 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		C97615BB16DB87584AF866DA /* Pods-Mobile Phone Buyer Guide.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Phone Buyer Guide.release.xcconfig"; path = "Target Support Files/Pods-Mobile Phone Buyer Guide/Pods-Mobile Phone Buyer Guide.release.xcconfig"; sourceTree = "<group>"; };
 		EE1330795299B3BE3CF3F744 /* Pods-Mobile Phone Buyer Guide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mobile Phone Buyer Guide.debug.xcconfig"; path = "Target Support Files/Pods-Mobile Phone Buyer Guide/Pods-Mobile Phone Buyer Guide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +89,7 @@
 				A0908C6C2316506300E92B54 /* Models */,
 				A0908C0423150DE800E92B54 /* AppDelegate.swift */,
 				A0908C3C231526C700E92B54 /* FeedData.swift */,
+				A0908C6F2316603900E92B54 /* extension.swift */,
 				A0908C0B23150DE900E92B54 /* Assets.xcassets */,
 				A0908C0D23150DE900E92B54 /* LaunchScreen.storyboard */,
 				A0908C1023150DE900E92B54 /* Info.plist */,
@@ -253,6 +256,7 @@
 				A0908C0523150DE800E92B54 /* AppDelegate.swift in Sources */,
 				A0908C3D231526C700E92B54 /* FeedData.swift in Sources */,
 				A0908C4123153DE300E92B54 /* ProductDetailViewController.swift in Sources */,
+				A0908C702316603900E92B54 /* extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

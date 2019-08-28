@@ -16,13 +16,14 @@ struct MobileResponseElement: Codable {
     let thumbImageURL: String
     let price: Double
     let brand, name: String
-    let isFavourite: Bool? = false
+    var isFavourite: Bool? = false
     let mobileResponseDescription: String
     
     enum CodingKeys: String, CodingKey {
         case rating, id, thumbImageURL, price, brand, name, isFavourite
         case mobileResponseDescription = "description"
     }
+
 }
 
 typealias MobileResponse = [MobileResponseElement]
@@ -40,3 +41,5 @@ struct MobileImageResponseElement: Codable {
 }
 
 typealias MobileImageResponse = [MobileImageResponseElement]
+
+
