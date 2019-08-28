@@ -74,8 +74,11 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
         let targetVC = segue.destination as! ProductDetailViewController
 //        targetVC.message = "Foam"
         print(self.mDataArray[self.selectedIndex!].name)
-        targetVC.message = self.mDataArray[self.selectedIndex!].name
+        targetVC.productName = self.mDataArray[self.selectedIndex!].name
         targetVC.id = self.id
+        targetVC.productDescription = self.mDataArray[self.selectedIndex!].mobileResponseDescription
+        targetVC.productPrice = "Price: $\(self.mDataArray[self.selectedIndex!].price)"
+        targetVC.productRate = "Rating: \(self.mDataArray[self.selectedIndex!].rating)"
     }
     
 }

@@ -12,21 +12,32 @@ import Kingfisher
 class ProductDetailViewController: UIViewController {
     
     @IBOutlet weak var mCollectionView:UICollectionView!
+    @IBOutlet weak var mProductRate:UILabel!
+    @IBOutlet weak var mProductPrice:UILabel!
+    @IBOutlet weak var mProductDescription:UILabel!
     
-    var message:String?
+    var productName:String?
     var id:Int?
     var mFeedData:FeedData = FeedData()
     var mDataArray:MobileImageResponse = []
+    var productDescription, productPrice, productRate:String?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = message
+        self.setupLabel()
+        self.title = productName
 //        print(id)
         self.feedData(id!)
 
         // Do any additional setup after loading the view.
+    }
+    
+    func setupLabel(){
+        mProductRate.text = productRate
+        mProductPrice.text = productPrice
+        mProductDescription.text = productDescription
     }
     
     func feedData(_ id: Int){
