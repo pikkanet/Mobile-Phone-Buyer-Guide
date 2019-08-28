@@ -15,6 +15,8 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var mTableView:UITableView!
     
     var mDataArray:MobileResponse = []
+    var mFavoriteArray:MobileResponse = []
+    var tmp:MobileResponse = []
     var mFeedData:FeedData = FeedData()
     var selectedIndex:Int?
     var id:Int?
@@ -98,6 +100,21 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
         targetVC.productDescription = self.mDataArray[self.selectedIndex!].mobileResponseDescription
         targetVC.productPrice = "Price: $\(self.mDataArray[self.selectedIndex!].price)"
         targetVC.productRate = "Rating: \(self.mDataArray[self.selectedIndex!].rating)"
+    }
+    
+    @IBAction func onClickAll(_ sender: Any) {
+        print("All")
+    }
+    
+    @IBAction func onClickFavorite(_ sender: Any) {
+        self.mFavoriteArray = self.mDataArray.filter{(data) -> Bool in
+            return data.isFavourite == true
+        }
+        print(self.mFavoriteArray)
+        self.tmp = self.mDataArray
+        self.mDataArray = self.mFavoriteArray
+        self.mTableView.reloadData()
+        print("Favorite")
     }
     
 }
