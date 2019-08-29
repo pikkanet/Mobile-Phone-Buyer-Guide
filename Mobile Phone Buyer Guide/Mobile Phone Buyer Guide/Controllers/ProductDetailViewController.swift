@@ -70,6 +70,7 @@ extension ProductDetailViewController:UICollectionViewDelegateFlowLayout, UIColl
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.width/2)
+        print( UIScreen.main.bounds.width * 0.35)
+        return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.35)
     }
 }
