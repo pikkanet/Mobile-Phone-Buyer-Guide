@@ -135,7 +135,6 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let targetVC = segue.destination as! ProductDetailViewController
-        print(self.mDataArray[self.selectedIndex!].name)
         targetVC.productName = self.mDataArray[self.selectedIndex!].name
         targetVC.id = self.id
         targetVC.productDescription = self.mDataArray[self.selectedIndex!].mobileResponseDescription
