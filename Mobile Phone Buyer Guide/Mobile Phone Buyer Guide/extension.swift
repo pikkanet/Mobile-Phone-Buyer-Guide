@@ -8,3 +8,6 @@
 
 import Foundation
 
+protocol MyCellDelegate: class {
+    func didTapButtonInCell(_ cell: CustomTableViewCell)
+}

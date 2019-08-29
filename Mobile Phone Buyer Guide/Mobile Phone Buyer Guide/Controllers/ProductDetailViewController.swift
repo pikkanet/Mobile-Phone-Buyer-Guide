@@ -11,27 +11,25 @@ import Kingfisher
 
 class ProductDetailViewController: UIViewController {
     
+    // Outlet
     @IBOutlet weak var mCollectionView:UICollectionView!
     @IBOutlet weak var mProductRate:UILabel!
     @IBOutlet weak var mProductPrice:UILabel!
     @IBOutlet weak var mProductDescription:UILabel!
     
+    // Variables
     var productName:String?
     var id:Int?
     var mFeedData:FeedData = FeedData()
     var mDataArray:MobileImageResponse = []
     var productDescription, productPrice, productRate:String?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupLabel()
         self.title = productName
-//        print(id)
         self.feedData(id!)
-
-        // Do any additional setup after loading the view.
     }
     
     func setupLabel(){
@@ -47,7 +45,6 @@ class ProductDetailViewController: UIViewController {
             self.mCollectionView.reloadData()
         }
     }
-
 }
 
 extension ProductDetailViewController:UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {

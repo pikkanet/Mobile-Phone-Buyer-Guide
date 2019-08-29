@@ -12,10 +12,12 @@ import UIKit
 
 class ProductViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MyCellDelegate {
     
+    // Outlet
     @IBOutlet weak var mTableView:UITableView!
     @IBOutlet weak var mAllButton:UIButton!
     @IBOutlet weak var mFavouriteButton:UIButton!
     
+    // Variables
     var mDataArray:MobileResponse = []
     var mFavoriteArray:MobileResponse = []
     var tmp:MobileResponse = []
@@ -28,8 +30,12 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         
         self.feedData()
-        
+        self.setupNavigationBar()
         // set up navigation bar
+        
+    }
+    
+    func setupNavigationBar(){
         let sort = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(onSort))
         navigationItem.rightBarButtonItems = [sort]
     }
@@ -37,23 +43,18 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     @objc func onSort(){
         let alert = UIAlertController(title: "Sort", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: {(_: UIAlertAction!) in
-            print("Price low to high")
             self.mDataArray.sort(by: { $0.price < $1.price })
             self.mTableView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: {(_: UIAlertAction!) in
-            print( "Price high to low")
             self.mDataArray.sort(by: { $0.price > $1.price })
             self.mTableView.reloadData()
         }))
         alert.addAction(UIAlertAction(title: "Rating", style: .default, handler: {(_: UIAlertAction!) in
-            print("Rating")
             self.mDataArray.sort(by: { $0.rating > $1.rating })
             self.mTableView.reloadData()
         }))
-
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-       
         self.present(alert, animated: true)
     }
     
@@ -108,7 +109,6 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("deleted")
             let i = self.tmp.firstIndex(where: { $0.name == self.mDataArray[indexPath.row].name})
             self.tmp[i!].isFavourite = false
             self.mDataArray.remove(at: indexPath.row)
@@ -161,9 +161,5 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
         self.mAllButton.alpha = 0.38
         self.mFavouriteButton.alpha = 0.78
     }
-    
 }
 
-protocol MyCellDelegate: class {
-    func didTapButtonInCell(_ cell: CustomTableViewCell)
-}
