@@ -17,7 +17,6 @@ class FeedData {
         AF.request(request).responseJSON { response in
             switch response.result {
             case let .success(value):
-                //                print(value)
                 do {
                     let decoder = JSONDecoder()
                     let result = try decoder.decode(MobileResponse.self, from: response.data!)

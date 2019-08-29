@@ -41,5 +41,3 @@ struct MobileImageResponseElement: Codable {
 }
 
 typealias MobileImageResponse = [MobileImageResponseElement]
-
-
