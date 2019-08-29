@@ -102,7 +102,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REe-dV-Q14">
-                                                    <rect key="frame" x="379" y="9" width="16" height="22"/>
+                                                    <rect key="frame" x="375" y="9" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="J2e-2j-myA"/>
+                                                        <constraint firstAttribute="height" constant="20" id="Ux4-QM-c8r"/>
+                                                    </constraints>
                                                     <state key="normal" image="unfav"/>
                                                     <connections>
                                                         <action selector="didTapButtonWithSender:" destination="Gno-Aj-As4" eventType="touchUpInside" id="TxW-sW-74g"/>
@@ -189,7 +193,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xbp-1h-VnI">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xbp-1h-VnI">
                                 <rect key="frame" x="0.0" y="90" width="414" height="271"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="jMi-NF-XTy">
@@ -319,6 +323,6 @@
     </scenes>
     <resources>
         <image name="person2" width="300" height="300"/>
-        <image name="unfav" width="16" height="16"/>
+        <image name="unfav" width="50" height="50"/>
     </resources>
 </document>
