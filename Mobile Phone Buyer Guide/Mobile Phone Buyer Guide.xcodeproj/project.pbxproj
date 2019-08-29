@@ -84,8 +84,9 @@
 		A0908C0323150DE800E92B54 /* Mobile Phone Buyer Guide */ = {
 			isa = PBXGroup;
 			children = (
-				A0908C6A2316503500E92B54 /* StoryBoards */,
 				A0908C6B2316504900E92B54 /* Controllers */,
+				A0908C712317C9B500E92B54 /* CustomCells */,
+				A0908C6A2316503500E92B54 /* StoryBoards */,
 				A0908C6C2316506300E92B54 /* Models */,
 				A0908C0423150DE800E92B54 /* AppDelegate.swift */,
 				A0908C3C231526C700E92B54 /* FeedData.swift */,
@@ -117,11 +118,18 @@
 		A0908C6C2316506300E92B54 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A0908C3E23152BA000E92B54 /* CustomTableViewCell.swift */,
-				A0908C6823162D1A00E92B54 /* ImageCollectionViewCell.swift */,
 				A0908C3A231525CF00E92B54 /* Model.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A0908C712317C9B500E92B54 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				A0908C3E23152BA000E92B54 /* CustomTableViewCell.swift */,
+				A0908C6823162D1A00E92B54 /* ImageCollectionViewCell.swift */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		BD0AB860FF4313138004C47D /* Pods */ = {
