@@ -64,6 +64,7 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
             for i in 0...self.mDataArray.count-1 {
                 self.mDataArray[i].isFavourite = false
             }
+            self.tmp = self.mDataArray
             self.mTableView.reloadData()
         }
     }
