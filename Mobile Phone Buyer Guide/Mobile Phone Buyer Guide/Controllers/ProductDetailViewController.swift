@@ -66,7 +66,6 @@ extension ProductDetailViewController:UICollectionViewDelegateFlowLayout, UIColl
         } else {
             cell.mImage.kf.setImage(with: URL(string: "http://" + item.url), placeholder: image)
         }
-//        cell.mImage.kf.setImage(with: URL(string: item.url), placeholder: image)
         return cell
     }
     
