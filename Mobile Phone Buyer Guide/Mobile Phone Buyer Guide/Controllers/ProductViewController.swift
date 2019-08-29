@@ -87,7 +87,6 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
         } else {
             cell.mFavoriteButton.isHidden = false
         }
-        print("foam : \(item.isFavourite!)")
         cell.delegate = self as MyCellDelegate
         cell.mFavoriteButton.tag = indexPath.row
         cell.mProductName.text = item.name
@@ -109,8 +108,8 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             print("deleted")
-            self.mDataArray[indexPath.row].isFavourite = false
-            print(self.mDataArray[indexPath.row].isFavourite!)
+            let i = self.tmp.firstIndex(where: { $0.name == self.mDataArray[indexPath.row].name})
+            self.tmp[i!].isFavourite = false
             self.mDataArray.remove(at: indexPath.row)
             self.mTableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -119,15 +118,12 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if(self.isFavorite!){
-            print("Delete")
             return UITableViewCell.EditingStyle.delete
         }
         return UITableViewCell.EditingStyle.none
-        
     }
     
     func didTapButtonInCell(_ cell: CustomTableViewCell) {
-        print(cell.mFavoriteButton.tag)
         if self.mDataArray[cell.mFavoriteButton.tag].isFavourite!{
             self.mDataArray[cell.mFavoriteButton.tag].isFavourite = false
         } else {
@@ -167,7 +163,6 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
 }
-
 
 protocol MyCellDelegate: class {
     func didTapButtonInCell(_ cell: CustomTableViewCell)
