@@ -87,6 +87,7 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
         } else {
             cell.mFavoriteButton.isHidden = false
         }
+        print("foam : \(item.isFavourite!)")
         cell.delegate = self as MyCellDelegate
         cell.mFavoriteButton.tag = indexPath.row
         cell.mProductName.text = item.name
@@ -102,27 +103,23 @@ class ProductViewController: UIViewController, UITableViewDataSource, UITableVie
         let item = self.mDataArray[indexPath.row]
         self.selectedIndex = indexPath.row
         self.id = item.id
-        print(indexPath.row)
         self.performSegue(withIdentifier: "showDetail", sender: self)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            print("delete")
+            print("deleted")
             self.mDataArray[indexPath.row].isFavourite = false
-            print(self.mDataArray[0].isFavourite)
-            self.mTableView.reloadData()
+            print(self.mDataArray[indexPath.row].isFavourite!)
+            self.mDataArray.remove(at: indexPath.row)
+            self.mTableView.deleteRows(at: [indexPath], with: .fade)
         }
+        self.mTableView.reloadData()
     }
-    
-//    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-//
-//
-//
-//    }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         if(self.isFavorite!){
+            print("Delete")
             return UITableViewCell.EditingStyle.delete
         }
         return UITableViewCell.EditingStyle.none
